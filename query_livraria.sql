@@ -17,3 +17,90 @@ CREATE TABLE LIVROS(
 INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
  VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
 VALUES ('A bússola de oura','Philip Pullman','m', 500, 'Ilumnar',200.00, 'SP','2001');
+
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('O Pequeno Principe','Autor desconhecido','m', 500, 'Desc',200.00, 'CE','1998');
+
+/* =============== */
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('Cavaleiro Real','Ana Claudia','F', 465, 'Atlas',49.9, 'RJ','2009');
+
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('SQL para leigos','João Nunes','M', 450, 'Addison',98, 'SP','2018');
+
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('Receitas Caseiras','Celia Tavares','F', 210, 'Atlas',45, 'RJ','2008');
+
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('Pessoas Efetivas','Eduardo Santos','M', 390, 'Beta',78.99, 'RJ','2018');
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('Habitos Saud[aveos','Eduardo Santos','M', 630, 'Beta',150.98, 'RJ','2019');
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('A Casa Marrom','Hermes Marcedo','M', 250, 'Bubba',60, 'MG','2016');
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('Estacio Querido','Geraldo Francisco','M', 310, 'Insignia',78.99, 'ES','2015');
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('Pra sempre amigas','Leda Silva','F', 510, 'Insignia',100, 'ES','2011');
+
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('Copas Inesqueciveis','Marco Alcantara','M', 200, 'larson',130.98, 'RS','2018');
+
+
+INSERT INTO LIVROS(NOME_LIVRO,NOME_AUTOR,SEXO_AUTOR, NUMERO_PAG, NOME_EDITORA,
+ VALOR_LIVRO, ESTADO_EDITORA, ANO_PUBLICACAO)
+VALUES ('O poder da mente','Clara Mafra','F', 120, 'Continental',56.58, 'RS','2017');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Q1 - Trazer todos os dados*/
+SELECT * FROM LIVROS;
+
+/*Q2 - Trazer o nome do livro e o nome da editora*/
+select NOME_LIVRO as Book, NOME_EDITORA as Publisher from livros;
+
+/*Q3 - Trazer o nome do livro e a UF dos livros publicados por autores do sexo masculino*/
+SELECT NOME_LIVRO as Book, ESTADO_EDITORA as UF from livros where (SEXO_AUTOR = "M" OR SEXO_AUTOR = 'm');
+
+/*Q4 - Trazer o nome do livro e o número de páginas dos livros publicados por autores do sexo feminino*/
+SELECT NOME_LIVRO as Book, NUMERO_PAG as NumberPages from livros where (SEXO_AUTOR = 'F' OR SEXO_AUTOR = 'f');
+
+/*Q5 - Trazer os valores dos livros das editoras de São Paulo.*/
+SELECT VALOR_LIVRO as ValorLivro from livros where ESTADO_EDITORA like 'SP';
+
+/*Q6 - Trazer os dados dos autores do sexo masculino que tiveram livros publicados por São paulo ou rio de janeiro*/
+SELECT NOME_AUTOR, SEXO_AUTOR from livros where (SEXO_AUTOR = 'M') and (ESTADO_EDITORA = 'SP');
